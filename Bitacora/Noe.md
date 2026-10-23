@@ -1,9 +1,9 @@
 
 # Diario de trabajo
----
+
 
 ## Semana del 12 al 16
----
+
 
 Durante esta semana, he asumido el cargo de responsable del grupo y he decidido dividir al equipo en dos subgrupos con funciones diferenciadas.
 
@@ -14,7 +14,7 @@ Esta organización tiene como objetivo mejorar la planificación del trabajo, an
 Además, esta dinámica de trabajo rotará semanalmente para que todos los integrantes puedan participar en ambas áreas y adquirir diferentes conocimientos y habilidades.
 
 ## Semana del 19 al 23
----
+
 
 Durante esta semana, he supervisado el trabajo de cada integrante del grupo con el objetivo de asignar tareas de manera equitativa, teniendo en cuenta las capacidades, los conocimientos y las cualidades individuales de cada persona.
 
