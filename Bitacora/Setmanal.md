@@ -49,7 +49,7 @@ Lo primero que tenemos que hacer es conectarnos al router para verificar interfa
 ---
 El segundo paso es meternos en la configuración del proxmox para configurar nuestra ip que tenemos que tener en el servidor.
 
-<img src="./IMG_7626.jpeg" alt="Router_OS" width="600" height="400">
+<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7626.jpeg" alt="Router_OS" width="600" height="400">
 
 <br>
 <br>
@@ -59,7 +59,7 @@ El segundo paso es meternos en la configuración del proxmox para configurar nue
 
 En este paso lo que hacemos es mirar las IPs que van a tener nuestras VLAN para configurarlas.
 
-<img src="./IMG_7629.jpeg" alt="Router_OS" width="600" height="400">
+<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7629.jpeg" alt="Router_OS" width="600" height="400">
 
 <br>
 <br>
@@ -67,7 +67,7 @@ En este paso lo que hacemos es mirar las IPs que van a tener nuestras VLAN para 
 ### Cuarto Paso
 ---
 Nos conectamos al Switch para poder configurar nuestras VLAN.
-<img src="./IMG_7631.jpeg" alt="Router_OS" width="600" height="400">
+<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7631.jpeg" alt="Router_OS" width="600" height="400">
 
 <br>
 <br>
@@ -75,7 +75,7 @@ Nos conectamos al Switch para poder configurar nuestras VLAN.
 ### Quinto Paso
 ---
 Aqui lo que hacemos es configurar nuestras VLANs con su numero de interfaz, ip.
-<img src="./IMG_7633.jpeg" alt="Router_OS" width="600" height="400">
+<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7633.jpeg" alt="Router_OS" width="600" height="400">
 
 <br>
 <br>
@@ -83,4 +83,4 @@ Aqui lo que hacemos es configurar nuestras VLANs con su numero de interfaz, ip.
 ### Sexto Paso
 ---
 Vemos todas las interfaces configuradas en el switch para poder comprobar que se han creado correctamente y ademas que esten activas.
-<img src="./IMG_7634.jpeg" alt="Router_OS" width="600" height="400">
+<img src="./IMG_7634.jpe" alt="Router_OS" width="600" height="400">
