@@ -40,7 +40,7 @@ La semana pasada hicimos la practica 2 donde tuvimos que hacer una instalación 
 --- 
 Lo primero que tenemos que hacer es conectarnos al router para verificar interfaces y que todo responde correctamente antes de conectarnos al proxmox
 
-<img src="./IMG_7625.jpeg" alt="Router_OS" width="600" height="400">
+<img src="IMG_7625.jpeg" alt="Router_OS" width="600" height="400">
 
 <br>
 <br>
