@@ -21,3 +21,7 @@ Durante esta semana, he supervisado el trabajo de cada integrante del grupo con 
 Esta distribución busca mejorar la organización del equipo, favorecer la colaboración y garantizar que cada miembro pueda contribuir de forma eficaz al desarrollo de la práctica.
 
 Asimismo, he llevado a cabo la reinstalación del servidor Proxmox, una tarea necesaria para continuar con el desarrollo y la configuración del entorno de trabajo. Esta intervención permitirá disponer de una base adecuada para seguir avanzando con las actividades previstas y facilitar las posteriores tareas de instalación y configuración.
+
+## Semana del 02 al 06
+En esta semana me dedico a dirigir las operaciones del equipo para recopilar información de lo que sucede además de realizar las instalaciones de las MV de Ubuntu server, Ubuntu cliente (LinuxMint) y la mas reciente de Windows server 2025 en la cual ha surgido problemas con el controlador de discos que no nos permitia ver los discos mediante la instalación del S.O y posteriormente la forma de formatear a estos mismos ppor directivas de windows.
+El correcto desarrollo y configuracion de las 3 maquinas sigue en proceso.
