@@ -1,29 +1,44 @@
-# Sede-Valencia
+# 🏢 Sede València
 
-## Integrantes
+Projecte de desplegament de la infraestructura de xarxa i servidors de la seu de València:
+instal·lació de **Proxmox VE**, configuració del switch **Cisco Catalyst** amb VLANs i creació
+de màquines virtuals (Ubuntu Server, Linux Mint i Windows Server 2025).
 
-- **Noé Guerola Mas** - Cap de projecte
-- **Miquel Ibor Lurbe** - Secretari
-- **Abdellah Bourass Et Taibi** - Responsable tècnic
-- **Alex Martinez Hervas** - Substitut del cap de projecte
-- **Adrián Martínez García** - Substitut del secretari
-- **Daniel Albelda Bonete** - Substitut del responsable tècnic
+## 👥 Integrants
 
-## Eines de treball
+| Membre | Rol | Bitàcora |
+|---|---|---|
+| Noé Guerola Mas | Cap de projecte | [Noe.md](./Bitacora/Noe.md) |
+| Miquel Ibor Lurbe | Secretari | [Miquel.md](./Bitacora/Miquel.md) |
+| Abdellah Bourass Et Taibi | Responsable tècnic | [Abdellah.md](./Bitacora/Abdellah.md) |
+| Alex Martínez Hervás | Substitut del cap de projecte | [Alex.md](./Bitacora/Alex.md) |
+| Adrián Martínez García | Substitut del secretari | [Adrian.md](./Bitacora/Adrian.md) |
+| Daniel Albelda Bonete | Substitut del responsable tècnic | [Daniel.md](./Bitacora/Daniel.md) |
 
-Per a la comunicació entre els membres del grup utilitzarem **WhatsApp**.
+## 🛠️ Eines de treball
 
-Per a la documentació del projecte utilitzarem **Microsoft Word**.
+| Ús | Eina |
+|---|---|
+| Comunicació | WhatsApp |
+| Documentació | Microsoft Word |
+| Diagrames i esquemes | Draw.io |
+| Repositori | GitHub |
+| Gestió de tasques | GitHub Projects |
 
-Per a la realització de diagrames, esquemes i mapes conceptuals utilitzarem **Draw.io**.
+## 📅 Seguiment del projecte
 
-El repositori de tota la documentació del projecte serà **GitHub**.
+| Setmana | Contingut |
+|---|---|
+| [Setmana 1](./Bitacora/Setmanal.md#setmana-1) | Organització del grup i assignació de rols |
+| [12-18 d'octubre](./Bitacora/Setmanal.md#semana-12-18-de-octubre) | Pràctica 2: router, Proxmox, IPs i VLANs al switch |
+| [19-25 d'octubre](./Bitacora/Setmanal.md#semana-19-25-de-octubre) | Creació de la màquina virtual Ubuntu a Proxmox |
 
-Per a organitzar i repartir les tasques del projecte utilitzarem **GitHub Projects**.
+## 📁 Estructura del repositori
 
-## Organització del repositori
-
-- [Documentació del projecte](./Documentacio/)
-- [Recursos](./Recursos/)
-- [Gestió del projecte](./GestioProjecte/)
-- [Bitàcora](./Bitacora/)
+```
+Sede-Valencia/
+├── Bitacora/
+│   ├── Setmanal.md     ← bitàcora conjunta del grup
+│   └── <Nom>.md        ← diari individual de cada membre
+└── Imgs/               ← captures i fotos de les pràctiques (vegeu Imgs/readme.md)
+```
