@@ -1,11 +1,10 @@
+# Diario de trabajo · Noé Guerola Mas
 
-# Diario de trabajo
-
+**Rol:** Cap de projecte
 
 ## Semana del 12 al 16
 
-
-Durante esta semana, he asumido el cargo de responsable del grupo y he decidido dividir al equipo en dos subgrupos con funciones diferenciadas.
+Durante esta semana he asumido el cargo de responsable del grupo y he decidido dividir al equipo en dos subgrupos con funciones diferenciadas.
 
 El primero se ha encargado de investigar posibles pasos futuros y documentar los procedimientos necesarios para poder consultarlos y aplicarlos en caso de que sea necesario. El segundo se ha centrado en la instalación y configuración de los elementos necesarios para llevar a cabo la práctica.
 
@@ -15,13 +14,16 @@ Además, esta dinámica de trabajo rotará semanalmente para que todos los integ
 
 ## Semana del 19 al 23
 
-
-Durante esta semana, he supervisado el trabajo de cada integrante del grupo con el objetivo de asignar tareas de manera equitativa, teniendo en cuenta las capacidades, los conocimientos y las cualidades individuales de cada persona.
+Durante esta semana he supervisado el trabajo de cada integrante del grupo con el objetivo de asignar tareas de manera equitativa, teniendo en cuenta las capacidades, los conocimientos y las cualidades individuales de cada persona.
 
 Esta distribución busca mejorar la organización del equipo, favorecer la colaboración y garantizar que cada miembro pueda contribuir de forma eficaz al desarrollo de la práctica.
 
 Asimismo, he llevado a cabo la reinstalación del servidor Proxmox, una tarea necesaria para continuar con el desarrollo y la configuración del entorno de trabajo. Esta intervención permitirá disponer de una base adecuada para seguir avanzando con las actividades previstas y facilitar las posteriores tareas de instalación y configuración.
 
-## Semana del 02 al 06
-En esta semana me dedico a dirigir las operaciones del equipo para recopilar información de lo que sucede además de realizar las instalaciones de las MV de Ubuntu server, Ubuntu cliente (LinuxMint) y la mas reciente de Windows server 2025 en la cual ha surgido problemas con el controlador de discos que no nos permitia ver los discos mediante la instalación del S.O y posteriormente la forma de formatear a estos mismos ppor directivas de windows.
-El correcto desarrollo y configuracion de las 3 maquinas sigue en proceso.
+## Semana del 2 al 6
+
+Esta semana me he dedicado a dirigir las operaciones del equipo para recopilar información sobre lo que sucede, además de realizar la instalación de las máquinas virtuales de Ubuntu Server, Ubuntu cliente (Linux Mint) y Windows Server 2025.
+
+En esta última han surgido problemas con el controlador de discos, que no nos permitía ver los discos durante la instalación del sistema operativo, y posteriormente con la forma de formatearlos mediante directivas de Windows.
+
+La configuración de las tres máquinas sigue en proceso.

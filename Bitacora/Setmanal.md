@@ -1,6 +1,16 @@
-# Bitàcora setmanal
+# 📓 Bitàcora setmanal
+
+## Índice
+
+- [Setmana 1 · Organització del grup](#setmana-1)
+- [Semana 12-18 de octubre · Práctica 2: router, Proxmox y VLANs](#semana-12-18-de-octubre)
+- [Semana 19-25 de octubre · Máquina virtual Ubuntu en Proxmox](#semana-19-25-de-octubre)
+
+---
 
 ## Setmana 1
+
+> **Organització del grup i assignació de rols**
 
 ### Objectiu del grup
 
@@ -8,7 +18,7 @@ Organitzar el grup de treball i assignar els diferents rols per a començar el p
 
 ### Treball realitzat
 
-Durant aquesta primera setmana ens hem centrat en l'organització inicial del grup. 
+Durant aquesta primera setmana ens hem centrat en l'organització inicial del grup.
 Hem revisat els diferents rols que hi havia dins del projecte i les funcions de cadascun:
 
 - Cap de projecte
@@ -32,117 +42,134 @@ Finalment, els rols van quedar assignats entre els membres del grup.
 
 Durant aquesta primera setmana no hem avançat en altres parts del projecte, ja que ens hem centrat en l'organització inicial i en l'assignació dels rols.
 
-## Semana 12-18 de Octubre
-
-La semana pasada hicimos la practica 2 donde tuvimos que hacer una instalación en el Proxmox, estudio y configuracion de IP y solucionar el switching del laboratorio.
-
-### Primer Paso
---- 
-Lo primero que tenemos que hacer es conectarnos al router para verificar interfaces y que todo responde correctamente antes de conectarnos al proxmox
-
-<img src="https://github.com/Zullex02/Sede-Valencia/blob/c2424e930d4b3e08965fb8d44393c3535beba3f7/IMG_7625.jpeg" alt="Router_OS" width="600" height="400">
-
-<br>
-<br>
-
-### Segundo Paso
----
-El segundo paso es meternos en la configuración del proxmox para configurar nuestra ip que tenemos que tener en el servidor.
-
-<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7626.jpeg" alt="Router_OS" width="600" height="400">
-
-<br>
-<br>
-
-### Tercero Paso
 ---
 
-En este paso lo que hacemos es mirar las IPs que van a tener nuestras VLAN para configurarlas.
+## Semana 12-18 de octubre
 
-<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7629.jpeg" alt="Router_OS" width="600" height="400">
+> **Práctica 2: instalación de Proxmox, configuración de IPs y switching del laboratorio**
 
-<br>
-<br>
+Esta semana hemos hecho la práctica 2, en la que hemos instalado Proxmox, estudiado y configurado el direccionamiento IP y resuelto el switching del laboratorio.
 
-### Cuarto Paso
+### Paso 1 · Conexión al router
+
+Lo primero es conectarnos al router por consola para verificar las interfaces y comprobar que todo responde correctamente antes de conectarnos a Proxmox.
+
+<p align="center">
+  <img src="../Imgs/p2-01-consola-router.jpg" alt="Conexión por consola serie al router" width="600">
+</p>
+
+### Paso 2 · Configuración de red en Proxmox
+
+Entramos en la configuración de Proxmox para asignar la IP que debe tener nuestro servidor.
+
+<p align="center">
+  <img src="../Imgs/p2-02-resumen-proxmox.jpg" alt="Resumen de la instalación de Proxmox con la IP del servidor" width="600">
+</p>
+
+### Paso 3 · Direccionamiento de las VLAN
+
+Revisamos las direcciones IP que tendrá cada VLAN antes de configurarlas en el switch.
+
+<p align="center">
+  <img src="../Imgs/p2-03-esquema-vlan.jpg" alt="Esquema de red con el direccionamiento de las VLAN" width="600">
+</p>
+
+### Paso 4 · Acceso al switch
+
+Nos conectamos al switch por Telnet para poder configurar nuestras VLAN.
+
+<p align="center">
+  <img src="../Imgs/p2-04-telnet-switch.jpg" alt="Acceso por Telnet al switch Catalyst 3560" width="600">
+</p>
+
+### Paso 5 · Creación y direccionamiento de las VLAN
+
+Creamos las VLAN 110 (Servidors), 120 (Comercial), 130 (Administració) y 199 (Gestió), y asignamos a cada interfaz VLAN su dirección IP.
+
+<p align="center">
+  <img src="../Imgs/p2-05a-crear-vlan.jpg" alt="Creación de las VLAN en el switch" width="600">
+</p>
+
+<p align="center">
+  <img src="../Imgs/p2-05b-ip-vlan.jpg" alt="Asignación de IPs a las interfaces VLAN" width="600">
+</p>
+
+### Paso 6 · Comprobación de las VLAN
+
+Con `show vlan brief` comprobamos que todas las VLAN se han creado correctamente y que están activas.
+
+<p align="center">
+  <img src="../Imgs/p2-06-show-vlan-brief.jpg" alt="Salida del comando show vlan brief" width="600">
+</p>
+
+### Paso 7 · Comprobación de las interfaces
+
+Con `show ip interface brief` verificamos la IP y el estado de cada interfaz del switch.
+
+<p align="center">
+  <img src="../Imgs/p2-07-show-ip-interface-brief.jpg" alt="Salida del comando show ip interface brief" width="600">
+</p>
+
+### Paso 8 · Asignación de puertos y guardado
+
+Asignamos los puertos GigabitEthernet 0/1 a 0/4 en modo acceso a las VLAN 110, 120, 130 y 199, y guardamos la configuración con `write memory`.
+
+<p align="center">
+  <img src="../Imgs/p2-08a-asignar-puertos.jpg" alt="Asignación de puertos a las VLAN y guardado de la configuración" width="600">
+</p>
+
 ---
-Nos conectamos al Switch para poder configurar nuestras VLAN.
-<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7631.jpeg" alt="Router_OS" width="600" height="400">
 
-<br>
-<br>
+## Semana 19-25 de octubre
 
-### Quinto Paso
----
-Aqui lo que hacemos es configurar nuestras VLANs con su numero de interfaz, ip.
-<img src="https://github.com/Zullex02/Sede-Valencia/blob/93d43741b71c5a5b75ca5f812403833fa8f49dfd/IMG_7633.jpeg" alt="Router_OS" width="600" height="400">
+> **Creación de una máquina virtual Ubuntu en Proxmox**
 
-<br>
-<br>
+Durante esta semana hemos continuado trabajando con Proxmox. Hemos creado una máquina virtual, preparado la imagen ISO de Ubuntu y configurado los parámetros necesarios para su instalación.
 
-### Sexto Paso
----
-Vemos todas las interfaces configuradas en el switch para poder comprobar que se han creado correctamente y ademas que esten activas.
-<img src="./IMG_7634.jpe" alt="Router_OS" width="600" height="400">
+### Paso 1 · Acceso a Proxmox
 
+Accedemos al panel de administración de Proxmox con el usuario root para gestionar el servidor y comenzar la práctica.
 
-<br>
+<p align="center">
+  <img src="../Imgs/p3-01-login-proxmox.jpg" alt="Acceso al panel de Proxmox" width="600">
+</p>
 
-## Semana 19-25 de Octubre
+### Paso 2 · Subida de la ISO
 
-Durante esta semana hemos continuado trabajando con Proxmox. En esta práctica hemos creado una máquina virtual, preparado la imagen ISO de Ubuntu y configurado los parámetros necesarios para su instalación.
+Dentro de Proxmox, accedemos al almacenamiento local para subir la imagen ISO de Ubuntu 25.04, que utilizaremos para instalar el sistema operativo.
 
-### Primer Paso
----
-Lo primero que hacemos es acceder al panel de administración de Proxmox mediante el usuario root para poder gestionar el servidor y comenzar con la práctica.
+<p align="center">
+  <img src="../Imgs/p3-02-subir-iso.jpg" alt="Subida de la ISO de Ubuntu al almacenamiento local" width="600">
+</p>
 
-<img src="../Imgs/1.jpg" alt="Acceso a Proxmox" width="600" height="400">
+### Paso 3 · Creación de la máquina virtual
 
-<br>
-<br>
+Creamos una nueva máquina virtual con el identificador 100 y el nombre Ubuntu-Cliente dentro del nodo sede.
 
-### Segundo Paso
----
-Una vez dentro de Proxmox, accedemos al almacenamiento local para subir la imagen ISO de Ubuntu 25.04, que utilizaremos posteriormente para instalar el sistema operativo.
+<p align="center">
+  <img src="../Imgs/p3-03-crear-mv.jpg" alt="Asistente de creación de la máquina virtual" width="600">
+</p>
 
-<img src="../Imgs/2.jpg" alt="Subida ISO Ubuntu" width="600" height="400">
+### Paso 4 · Selección de la ISO
 
-<br>
-<br>
+Seleccionamos la imagen ISO de Ubuntu que hemos subido y configuramos el tipo de sistema operativo como Linux con la versión correspondiente.
 
-### Tercer Paso
----
-En este paso comenzamos a crear una nueva máquina virtual. Le asignamos el identificador 100 y el nombre Ubuntu-Cliente dentro del nodo sede.
+<p align="center">
+  <img src="../Imgs/p3-04-seleccion-iso.jpg" alt="Selección de la ISO y del tipo de sistema operativo" width="600">
+</p>
 
-<img src="../Imgs/3.jpg" alt="Creación de máquina virtual" width="600" height="400">
+### Paso 5 · Configuración del sistema
 
-<br>
-<br>
+Seleccionamos el firmware OVMF (UEFI), mantenemos el controlador VirtIO SCSI y activamos el disco EFI necesario para el arranque.
 
-### Cuarto Paso
----
-A continuación, seleccionamos la imagen ISO de Ubuntu que hemos subido anteriormente. También configuramos el tipo de sistema operativo como Linux y la versión correspondiente.
+<p align="center">
+  <img src="../Imgs/p3-05-sistema.jpg" alt="Configuración del firmware y del controlador" width="600">
+</p>
 
-<img src="../Imgs/4.jpg" alt="Selección de ISO" width="600" height="400">
+### Paso 6 · Configuración del disco
 
-<br>
-<br>
+Por último, configuramos el disco duro virtual con 32 GB en el almacenamiento local-lvm y el controlador VirtIO SCSI.
 
-### Quinto Paso
----
-En este apartado configuramos los parámetros del sistema. Seleccionamos el firmware OVMF (UEFI), mantenemos el controlador VirtIO SCSI y activamos el disco EFI necesario para el arranque.
-
-<img src="../Imgs/5.jpg" alt="Configuración del sistema" width="600" height="400">
-
-<br>
-<br>
-
-### Sexto Paso
----
-Por último, configuramos el disco duro virtual de la máquina. Le asignamos una capacidad de 32 GB, utilizando el almacenamiento local-lvm y el controlador VirtIO SCSI.
-
-<img src="../Imgs/6.jpg" alt="Configuración del disco duro" width="600" height="400">
-
-<br>
-<br>
-
+<p align="center">
+  <img src="../Imgs/p3-06-disco.jpg" alt="Configuración del disco duro virtual" width="600">
+</p>
