@@ -1,29 +1,92 @@
-# Diario de trabajo · Noé Guerola Mas
+# 📔 Diario de trabajo · Noé Guerola Mas
 
-**Rol:** Cap de projecte
+| | |
+|---|---|
+| **Rol** | Cap de projecte |
+| **Substitut** | Alex Martínez Hervás |
+| **Bitácora del grupo** | [Setmanal.md](./Setmanal.md) |
 
-## Semana del 12 al 16
+## Índice
 
-Durante esta semana he asumido el cargo de responsable del grupo y he decidido dividir al equipo en dos subgrupos con funciones diferenciadas.
+- [Semana del 12 al 16 de octubre · Organización en subgrupos](#semana-del-12-al-16-de-octubre)
+- [Semana del 19 al 23 de octubre · Reparto de tareas y reinstalación de Proxmox](#semana-del-19-al-23-de-octubre)
+- [Semana del 2 al 6 de noviembre · Máquinas virtuales](#semana-del-2-al-6-de-noviembre)
+- [Resumen de responsabilidades](#resumen-de-responsabilidades)
 
-El primero se ha encargado de investigar posibles pasos futuros y documentar los procedimientos necesarios para poder consultarlos y aplicarlos en caso de que sea necesario. El segundo se ha centrado en la instalación y configuración de los elementos necesarios para llevar a cabo la práctica.
+---
 
-Esta organización tiene como objetivo mejorar la planificación del trabajo, anticiparse a posibles problemas y permitir que las tareas de investigación e instalación se desarrollen de forma simultánea. De este modo, podremos optimizar el tiempo disponible y estar mejor preparados ante posibles dificultades.
+## Semana del 12 al 16 de octubre
 
-Además, esta dinámica de trabajo rotará semanalmente para que todos los integrantes puedan participar en ambas áreas y adquirir diferentes conocimientos y habilidades.
+> **Organización del equipo en dos subgrupos** · Trabajo del grupo: [Práctica 2](./Setmanal.md#semana-12-18-de-octubre)
 
-## Semana del 19 al 23
+### Qué he hecho
 
-Durante esta semana he supervisado el trabajo de cada integrante del grupo con el objetivo de asignar tareas de manera equitativa, teniendo en cuenta las capacidades, los conocimientos y las cualidades individuales de cada persona.
+Al asumir el cargo de responsable del grupo, he dividido el equipo en **dos subgrupos** con funciones diferenciadas:
 
-Esta distribución busca mejorar la organización del equipo, favorecer la colaboración y garantizar que cada miembro pueda contribuir de forma eficaz al desarrollo de la práctica.
+| Subgrupo | Función |
+|---|---|
+| 🔍 **Investigación** | Investigar los pasos futuros y documentar los procedimientos necesarios para consultarlos y aplicarlos cuando haga falta. |
+| 🛠️ **Instalación** | Instalar y configurar los elementos necesarios para llevar a cabo la práctica. |
 
-Asimismo, he llevado a cabo la reinstalación del servidor Proxmox, una tarea necesaria para continuar con el desarrollo y la configuración del entorno de trabajo. Esta intervención permitirá disponer de una base adecuada para seguir avanzando con las actividades previstas y facilitar las posteriores tareas de instalación y configuración.
+### Por qué
 
-## Semana del 2 al 6
+- **Planificar mejor** el trabajo y anticiparnos a posibles problemas.
+- **Trabajar en paralelo**: la investigación y la instalación avanzan de forma simultánea, optimizando el tiempo disponible.
+- **Aprender de todo**: los subgrupos **rotan cada semana**, de modo que todos los integrantes participan en ambas áreas y adquieren conocimientos y habilidades diferentes.
 
-Esta semana me he dedicado a dirigir las operaciones del equipo para recopilar información sobre lo que sucede, además de realizar la instalación de las máquinas virtuales de Ubuntu Server, Ubuntu cliente (Linux Mint) y Windows Server 2025.
+---
 
-En esta última han surgido problemas con el controlador de discos, que no nos permitía ver los discos durante la instalación del sistema operativo, y posteriormente con la forma de formatearlos mediante directivas de Windows.
+## Semana del 19 al 23 de octubre
 
-La configuración de las tres máquinas sigue en proceso.
+> **Reparto de tareas y reinstalación de Proxmox** · Trabajo del grupo: [MV Ubuntu en Proxmox](./Setmanal.md#semana-19-25-de-octubre)
+
+### Qué he hecho
+
+- **Supervisión del equipo:** he seguido el trabajo de cada integrante para repartir las tareas de forma equitativa, teniendo en cuenta las capacidades, los conocimientos y las cualidades de cada persona.
+- **Reinstalación del servidor Proxmox:** necesaria para continuar con la configuración del entorno de trabajo.
+
+### Resultado
+
+- Un reparto de tareas que mejora la organización, favorece la colaboración y permite que cada miembro contribuya de forma eficaz.
+- Un servidor Proxmox limpio que sirve de base para las siguientes instalaciones y configuraciones.
+
+---
+
+## Semana del 2 al 6 de noviembre
+
+> **Instalación de las máquinas virtuales**
+
+### Qué he hecho
+
+- **Coordinación:** he dirigido las operaciones del equipo para recopilar información sobre el estado del trabajo.
+- **Instalación de tres máquinas virtuales** en Proxmox:
+
+| Máquina virtual | Función | Estado |
+|---|---|---|
+| Ubuntu Server | Servidor Linux | 🟡 Configuración en curso |
+| Linux Mint | Cliente Linux | 🟡 Configuración en curso |
+| Windows Server 2025 | Servidor Windows | 🟠 Con incidencias |
+
+### Problemas encontrados
+
+| Problema | Detalle | Estado |
+|---|---|---|
+| Controlador de discos | Durante la instalación de Windows Server 2025 el instalador no detectaba los discos. | En revisión |
+| Formateo de discos | Dificultades para formatear los discos mediante directivas de Windows. | En revisión |
+
+### Pendiente
+
+- [ ] Terminar la configuración de Ubuntu Server.
+- [ ] Terminar la configuración de Linux Mint.
+- [ ] Resolver las incidencias de discos y terminar la configuración de Windows Server 2025.
+
+---
+
+## Resumen de responsabilidades
+
+Como cap de projecte, mis tareas principales durante el proyecto han sido:
+
+1. **Organizar** el equipo (subgrupos de investigación e instalación con rotación semanal).
+2. **Repartir** las tareas de forma equitativa según el perfil de cada integrante.
+3. **Supervisar y coordinar** el trabajo del grupo.
+4. **Participar en la parte técnica**: reinstalación de Proxmox e instalación de las máquinas virtuales.
