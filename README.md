@@ -32,6 +32,7 @@ de màquines virtuals (Ubuntu Server, Linux Mint i Windows Server 2025).
 | [Setmana 1](./Bitacora/Setmanal.md#setmana-1) | Organització del grup i assignació de rols |
 | [12-18 d'octubre](./Bitacora/Setmanal.md#semana-12-18-de-octubre) | Pràctica 2: router, Proxmox, IPs i VLANs al switch |
 | [19-25 d'octubre](./Bitacora/Setmanal.md#semana-19-25-de-octubre) | Creació de la màquina virtual Ubuntu a Proxmox |
+| [2-6 de novembre](./Bitacora/Setmanal.md#semana-2-6-de-noviembre) | Màquines virtuals: Ubuntu Server, Linux Mint i Windows Server 2025 |
 
 ## 📁 Estructura del repositori
 
