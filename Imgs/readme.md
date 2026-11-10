@@ -3,6 +3,17 @@
 Captures i fotos de les pràctiques. El nom segueix el format `pX-NN-descripcio.jpg`,
 on `pX` és la pràctica i `NN` el pas on s'utilitza a la [bitàcora setmanal](../Bitacora/Setmanal.md).
 
+## 🖥️ Captures recreades (`capturas/`)
+
+La carpeta [`capturas/`](./capturas) conté versions netes, en format PNG, de les fotos dels punts
+importants: els mateixos comandos, valors i eixides, però sense reflexos ni persones de fons.
+Són les que s'utilitzen a la [bitàcora setmanal](../Bitacora/Setmanal.md), amb un enllaç a la foto original.
+
+- Es generen amb [`capturas/generar.js`](./capturas/generar.js) (Node + Playwright): `node generar.js <carpeta_eixida>`.
+- `p2-08-asignar-puertos.png` substitueix les dues fotos `p2-08a` i `p2-08b`.
+- A les captures s'han omés els errors de teclat (contrasenyes fallides, `erxit`, `show ip brief`) i,
+  al resum de Proxmox, el correu electrònic.
+
 ## Pràctica 2 · Router, Proxmox i VLANs (12-18 d'octubre)
 
 | Fitxer | Contingut |

@@ -4,6 +4,9 @@ Bitácora conjunta del grupo **Sede València**. Cada semana recoge el objetivo,
 (con capturas) y el resultado. Los diarios individuales están en esta misma carpeta
 (p. ej. [Noe.md](./Noe.md)).
 
+> 🖼️ Las capturas son **recreaciones limpias** de las fotos tomadas en el laboratorio (mismos comandos, valores y salidas).
+> Debajo de cada una hay un enlace a la foto original. Ver [Imgs/readme.md](../Imgs/readme.md).
+
 ## Índice
 
 | Semana | Contenido | Estado |
@@ -15,7 +18,7 @@ Bitácora conjunta del grupo **Sede València**. Cada semana recoge el objetivo,
 
 ### 🌐 Datos de red de la sede
 
-Referencia rápida extraída del [esquema de red](../Imgs/p2-03-esquema-vlan.jpg) y de la configuración del switch.
+Referencia rápida extraída del [esquema de red](../Imgs/capturas/p2-03-esquema-vlan.png) y de la configuración del switch.
 
 | VLAN | Departamento | Red | Gateway (SVI del switch) | Puerto de acceso |
 |---|---|---|---|---|
@@ -82,7 +85,8 @@ Instalar Proxmox, estudiar y configurar el direccionamiento IP de la sede y reso
 Lo primero es conectarnos al router por consola para verificar las interfaces y comprobar que todo responde correctamente antes de conectarnos a Proxmox.
 
 <p align="center">
-  <img src="../Imgs/p2-01-consola-router.jpg" alt="Conexión por consola serie al router" width="600">
+  <img src="../Imgs/capturas/p2-01-consola-router.png" alt="Conexión por consola serie al router" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-01-consola-router.jpg">Foto original</a></sub>
 </p>
 
 > 💡 Para la conexión por consola también instalamos el emulador de terminal PuTTY (`pterm`):
@@ -104,7 +108,8 @@ Durante la instalación de Proxmox asignamos la configuración de red del servid
 | Sistema de ficheros | ext4 en `/dev/sda` |
 
 <p align="center">
-  <img src="../Imgs/p2-02-resumen-proxmox.jpg" alt="Resumen de la instalación de Proxmox con la IP del servidor" width="600">
+  <img src="../Imgs/capturas/p2-02-resumen-proxmox.png" alt="Resumen de la instalación de Proxmox con la IP del servidor" width="800">
+  <br><sub>📷 <a href="../Imgs/p2-02-resumen-proxmox.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 3 · Direccionamiento de las VLAN
@@ -112,7 +117,8 @@ Durante la instalación de Proxmox asignamos la configuración de red del servid
 Revisamos las direcciones IP que tendrá cada VLAN antes de configurarlas en el switch (ver [tabla de red](#-datos-de-red-de-la-sede)).
 
 <p align="center">
-  <img src="../Imgs/p2-03-esquema-vlan.jpg" alt="Esquema de red con el direccionamiento de las VLAN" width="600">
+  <img src="../Imgs/capturas/p2-03-esquema-vlan.png" alt="Esquema de red con el direccionamiento de las VLAN" width="800">
+  <br><sub>📷 <a href="../Imgs/p2-03-esquema-vlan.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 4 · Acceso al switch
@@ -120,7 +126,8 @@ Revisamos las direcciones IP que tendrá cada VLAN antes de configurarlas en el 
 Nos conectamos al switch por Telnet para poder configurar nuestras VLAN.
 
 <p align="center">
-  <img src="../Imgs/p2-04-telnet-switch.jpg" alt="Acceso por Telnet al switch Catalyst 3560" width="600">
+  <img src="../Imgs/capturas/p2-04-telnet-switch.png" alt="Acceso por Telnet al switch Catalyst 3560" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-04-telnet-switch.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 5 · Creación y direccionamiento de las VLAN
@@ -152,11 +159,13 @@ interface vlan 199
 ```
 
 <p align="center">
-  <img src="../Imgs/p2-05a-crear-vlan.jpg" alt="Creación de las VLAN en el switch" width="600">
+  <img src="../Imgs/capturas/p2-05a-crear-vlan.png" alt="Creación de las VLAN en el switch" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-05a-crear-vlan.jpg">Foto original</a></sub>
 </p>
 
 <p align="center">
-  <img src="../Imgs/p2-05b-ip-vlan.jpg" alt="Asignación de IPs a las interfaces VLAN" width="600">
+  <img src="../Imgs/capturas/p2-05b-ip-vlan.png" alt="Asignación de IPs a las interfaces VLAN" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-05b-ip-vlan.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 6 · Comprobación de las VLAN
@@ -164,7 +173,8 @@ interface vlan 199
 Con `show vlan brief` comprobamos que todas las VLAN se han creado correctamente y que están activas.
 
 <p align="center">
-  <img src="../Imgs/p2-06-show-vlan-brief.jpg" alt="Salida del comando show vlan brief" width="600">
+  <img src="../Imgs/capturas/p2-06-show-vlan-brief.png" alt="Salida del comando show vlan brief" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-06-show-vlan-brief.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 7 · Comprobación de las interfaces
@@ -172,7 +182,8 @@ Con `show vlan brief` comprobamos que todas las VLAN se han creado correctamente
 Con `show ip interface brief` verificamos la IP y el estado de cada interfaz del switch.
 
 <p align="center">
-  <img src="../Imgs/p2-07-show-ip-interface-brief.jpg" alt="Salida del comando show ip interface brief" width="600">
+  <img src="../Imgs/capturas/p2-07-show-ip-interface-brief.png" alt="Salida del comando show ip interface brief" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-07-show-ip-interface-brief.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 8 · Asignación de puertos y guardado
@@ -201,12 +212,10 @@ write memory
 ```
 
 <p align="center">
-  <img src="../Imgs/p2-08a-asignar-puertos.jpg" alt="Asignación de puertos a las VLAN y guardado de la configuración" width="600">
+  <img src="../Imgs/capturas/p2-08-asignar-puertos.png" alt="Asignación de puertos a las VLAN y guardado de la configuración" width="600">
+  <br><sub>📷 <a href="../Imgs/p2-08a-asignar-puertos.jpg">Foto original</a></sub>
 </p>
 
-<p align="center">
-  <img src="../Imgs/p2-08b-asignar-puertos.jpg" alt="Otra captura de la asignación de puertos a las VLAN" width="600">
-</p>
 
 ### ✅ Resultado
 
@@ -238,7 +247,8 @@ Crear una máquina virtual en Proxmox, preparar la imagen ISO de Ubuntu y config
 Accedemos al panel de administración de Proxmox con el usuario root para gestionar el servidor y comenzar la práctica.
 
 <p align="center">
-  <img src="../Imgs/p3-01-login-proxmox.jpg" alt="Acceso al panel de Proxmox" width="600">
+  <img src="../Imgs/capturas/p3-01-login-proxmox.png" alt="Acceso al panel de Proxmox" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-01-login-proxmox.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 2 · Subida de la ISO
@@ -246,7 +256,8 @@ Accedemos al panel de administración de Proxmox con el usuario root para gestio
 Dentro de Proxmox, accedemos al almacenamiento local para subir la imagen ISO de Ubuntu 25.04, que utilizaremos para instalar el sistema operativo.
 
 <p align="center">
-  <img src="../Imgs/p3-02-subir-iso.jpg" alt="Subida de la ISO de Ubuntu al almacenamiento local" width="600">
+  <img src="../Imgs/capturas/p3-02-subir-iso.png" alt="Subida de la ISO de Ubuntu al almacenamiento local" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-02-subir-iso.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 3 · Creación de la máquina virtual
@@ -254,7 +265,8 @@ Dentro de Proxmox, accedemos al almacenamiento local para subir la imagen ISO de
 Creamos una nueva máquina virtual con el identificador 100 y el nombre Ubuntu-Cliente dentro del nodo sede.
 
 <p align="center">
-  <img src="../Imgs/p3-03-crear-mv.jpg" alt="Asistente de creación de la máquina virtual" width="600">
+  <img src="../Imgs/capturas/p3-03-crear-mv.png" alt="Asistente de creación de la máquina virtual" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-03-crear-mv.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 4 · Selección de la ISO
@@ -262,7 +274,8 @@ Creamos una nueva máquina virtual con el identificador 100 y el nombre Ubuntu-C
 Seleccionamos la imagen ISO de Ubuntu que hemos subido y configuramos el tipo de sistema operativo como Linux con la versión correspondiente.
 
 <p align="center">
-  <img src="../Imgs/p3-04-seleccion-iso.jpg" alt="Selección de la ISO y del tipo de sistema operativo" width="600">
+  <img src="../Imgs/capturas/p3-04-seleccion-iso.png" alt="Selección de la ISO y del tipo de sistema operativo" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-04-seleccion-iso.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 5 · Configuración del sistema
@@ -270,7 +283,8 @@ Seleccionamos la imagen ISO de Ubuntu que hemos subido y configuramos el tipo de
 Seleccionamos el firmware OVMF (UEFI), mantenemos el controlador VirtIO SCSI y activamos el disco EFI necesario para el arranque.
 
 <p align="center">
-  <img src="../Imgs/p3-05-sistema.jpg" alt="Configuración del firmware y del controlador" width="600">
+  <img src="../Imgs/capturas/p3-05-sistema.png" alt="Configuración del firmware y del controlador" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-05-sistema.jpg">Foto original</a></sub>
 </p>
 
 ### Paso 6 · Configuración del disco
@@ -278,7 +292,8 @@ Seleccionamos el firmware OVMF (UEFI), mantenemos el controlador VirtIO SCSI y a
 Por último, configuramos el disco duro virtual con 32 GB en el almacenamiento local-lvm y el controlador VirtIO SCSI.
 
 <p align="center">
-  <img src="../Imgs/p3-06-disco.jpg" alt="Configuración del disco duro virtual" width="600">
+  <img src="../Imgs/capturas/p3-06-disco.png" alt="Configuración del disco duro virtual" width="800">
+  <br><sub>📷 <a href="../Imgs/p3-06-disco.jpg">Foto original</a></sub>
 </p>
 
 ### ✅ Resultado
