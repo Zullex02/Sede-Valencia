@@ -11,6 +11,8 @@
 - [Semana del 12 al 16 de octubre · Organización en subgrupos](#semana-del-12-al-16-de-octubre)
 - [Semana del 19 al 23 de octubre · Reparto de tareas y reinstalación de Proxmox](#semana-del-19-al-23-de-octubre)
 - [Semana del 2 al 6 de noviembre · Máquinas virtuales](#semana-del-2-al-6-de-noviembre)
+- [Práctica 4 · Windows Server 2025 y DHCP](#practica-4)
+- [Estado actual del proyecto](#estado-actual)
 - [Resumen de responsabilidades](#resumen-de-responsabilidades)
 
 ---
@@ -63,22 +65,59 @@ Al asumir el cargo de responsable del grupo, he dividido el equipo en **dos subg
 
 | Máquina virtual | Función | Estado |
 |---|---|---|
-| Ubuntu Server | Servidor Linux | 🟡 Configuración en curso |
-| Linux Mint | Cliente Linux | 🟡 Configuración en curso |
-| Windows Server 2025 | Servidor Windows | 🟠 Con incidencias |
+| Ubuntu Server | Servidor Linux | ✅ Instalada y configurada |
+| Linux Mint | Cliente Linux | ✅ Instalada y configurada |
+| Windows Server 2025 | Servidor Windows | ✅ Instalada y configurada |
 
 ### Problemas encontrados
 
 | Problema | Detalle | Estado |
 |---|---|---|
-| Controlador de discos | Durante la instalación de Windows Server 2025 el instalador no detectaba los discos. | En revisión |
-| Formateo de discos | Dificultades para formatear los discos mediante directivas de Windows. | En revisión |
+| Controlador de discos | Durante la instalación de Windows Server 2025 el instalador no detectaba los discos. | ✅ Solucionado |
+| Formateo de discos | Dificultades para formatear los discos mediante directivas de Windows. | ✅ Solucionado |
 
-### Pendiente
+### Resultado
 
-- [ ] Terminar la configuración de Ubuntu Server.
-- [ ] Terminar la configuración de Linux Mint.
-- [ ] Resolver las incidencias de discos y terminar la configuración de Windows Server 2025.
+- [x] Configuración de Ubuntu Server terminada ([ver instalación](./Setmanal.md#instalacion-ubuntu-server)).
+- [x] Configuración de Linux Mint terminada.
+- [x] Incidencias de discos resueltas y Windows Server 2025 configurado.
+
+---
+
+<a id="practica-4"></a>
+
+## Práctica 4 · Windows Server 2025 y DHCP
+
+> **Despliegue de servicios con Windows Server 2025** · ✅ **Completada** · Trabajo del grupo: [Práctica 4](./Setmanal.md#practica-4)
+
+### Qué he hecho
+
+- **Coordinación:** he organizado al equipo para cubrir las seis tareas de la práctica y he seguido su avance.
+- **Cierre de incidencias:** los problemas de discos de Windows Server 2025 de la semana anterior quedaron resueltos, lo que nos permitió completar la instalación y la configuración del servidor.
+
+### Resultado
+
+| Tarea | Estado |
+|---|---|
+| Planificación de la infraestructura | ✅ |
+| Instalación de Windows Server 2025 (UEFI/GPT) | ✅ |
+| Configuración del almacenamiento | ✅ |
+| Configuración TCP/IP | ✅ |
+| Servicio DHCP | ✅ |
+| DHCP no autorizado en Ubuntu Server y DHCP Snooping | ✅ |
+
+La práctica 4 se ha realizado **de forma completa**.
+
+---
+
+<a id="estado-actual"></a>
+
+## Estado actual del proyecto
+
+> **20 de noviembre de 2026** · 🟢 **Estado correcto**
+
+- Todas las prácticas hasta la fecha están terminadas y no quedan incidencias abiertas.
+- El siguiente objetivo del grupo es **mejorar las VLAN** de la sede. Como cap de projecte, me encargo de repartir y supervisar estas tareas ([líneas de trabajo](./Setmanal.md#estado-actual)).
 
 ---
 
@@ -90,3 +129,4 @@ Como cap de projecte, mis tareas principales durante el proyecto han sido:
 2. **Repartir** las tareas de forma equitativa según el perfil de cada integrante.
 3. **Supervisar y coordinar** el trabajo del grupo.
 4. **Participar en la parte técnica**: reinstalación de Proxmox e instalación de las máquinas virtuales.
+5. **Hacer seguimiento de las incidencias** hasta resolverlas y mantener actualizado el estado del proyecto.

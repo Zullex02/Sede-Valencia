@@ -33,6 +33,8 @@ de màquines virtuals (Ubuntu Server, Linux Mint i Windows Server 2025).
 | [12-18 d'octubre](./Bitacora/Setmanal.md#semana-12-18-de-octubre) | Pràctica 2: router, Proxmox, IPs i VLANs al switch |
 | [19-25 d'octubre](./Bitacora/Setmanal.md#semana-19-25-de-octubre) | Creació de la màquina virtual Ubuntu a Proxmox |
 | [2-6 de novembre](./Bitacora/Setmanal.md#semana-2-6-de-noviembre) | Màquines virtuals: Ubuntu Server, Linux Mint i Windows Server 2025 |
+| [Pràctica 4](./Bitacora/Setmanal.md#practica-4) | Windows Server 2025, DHCP i DHCP Snooping · instal·lació d'Ubuntu Server ✅ |
+| [Estat actual](./Bitacora/Setmanal.md#estado-actual) | Projecte en estat correcte · millora de les VLANs |
 
 ## 📁 Estructura del repositori
 
