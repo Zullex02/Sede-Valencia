@@ -10,6 +10,8 @@ importants: els mateixos comandos, valors i eixides, però sense reflexos ni per
 Són les que s'utilitzen a la [bitàcora setmanal](../Bitacora/Setmanal.md), amb un enllaç a la foto original.
 
 - Es generen amb [`capturas/generar.js`](./capturas/generar.js) (Node + Playwright): `node generar.js <carpeta_eixida>`.
+- `p4-ubuntu-NN-*.png`: instal·lació d'Ubuntu Server (pràctica 4). No hi ha foto original: es generen amb
+  [`capturas/generar_ubuntu.js`](./capturas/generar_ubuntu.js), on es poden canviar els valors (IP, nom del servidor, usuari...).
 - `p2-08-asignar-puertos.png` substitueix les dues fotos `p2-08a` i `p2-08b`.
 - A les captures s'han omés els errors de teclat (contrasenyes fallides, `erxit`, `show ip brief`) i,
   al resum de Proxmox, el correu electrònic.

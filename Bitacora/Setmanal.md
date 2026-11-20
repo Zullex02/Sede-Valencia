@@ -14,7 +14,9 @@ Bitácora conjunta del grupo **Sede València**. Cada semana recoge el objetivo,
 | [Setmana 1](#setmana-1) | Organització del grup i assignació de rols | ✅ Completada |
 | [12-18 de octubre](#semana-12-18-de-octubre) | Práctica 2: router, Proxmox y VLANs | ✅ Completada |
 | [19-25 de octubre](#semana-19-25-de-octubre) | Práctica 3: máquina virtual Ubuntu en Proxmox | ✅ Completada |
-| [2-6 de noviembre](#semana-2-6-de-noviembre) | Máquinas virtuales: Ubuntu Server, Linux Mint y Windows Server 2025 | 🟡 En curso |
+| [2-6 de noviembre](#semana-2-6-de-noviembre) | Máquinas virtuales: Ubuntu Server, Linux Mint y Windows Server 2025 | ✅ Completada |
+| [Práctica 4](#practica-4) | Windows Server 2025, DHCP y DHCP Snooping · instalación de Ubuntu Server | ✅ Completada |
+| [Estado actual](#estado-actual) | Proyecto en estado correcto · mejora de las VLAN | 🔵 En curso |
 
 ### 🌐 Datos de red de la sede
 
@@ -314,20 +316,198 @@ Instalar y configurar en Proxmox las tres máquinas virtuales de la sede.
 
 | Máquina virtual | Función | Estado |
 |---|---|---|
-| Ubuntu Server | Servidor Linux | 🟡 Configuración en curso |
-| Linux Mint | Cliente Linux | 🟡 Configuración en curso |
-| Windows Server 2025 | Servidor Windows | 🟠 Con incidencias |
+| Ubuntu Server | Servidor Linux | ✅ Instalada y configurada |
+| Linux Mint | Cliente Linux | ✅ Instalada y configurada |
+| Windows Server 2025 | Servidor Windows | ✅ Instalada y configurada |
 
 ### ⚠️ Problemas encontrados
 
 | Problema | Detalle | Estado |
 |---|---|---|
-| Controlador de discos | El instalador de Windows Server 2025 no detectaba los discos. | En revisión |
-| Formateo de discos | Dificultades para formatear los discos mediante directivas de Windows. | En revisión |
+| Controlador de discos | El instalador de Windows Server 2025 no detectaba los discos. | ✅ Solucionado |
+| Formateo de discos | Dificultades para formatear los discos mediante directivas de Windows. | ✅ Solucionado |
 
-### 📌 Pendiente
+> ✅ Las incidencias de esta semana **ya están resueltas**: Windows Server 2025 detecta y formatea correctamente sus discos.
 
-- [ ] Terminar la configuración de Ubuntu Server.
-- [ ] Terminar la configuración de Linux Mint.
-- [ ] Resolver las incidencias de discos y terminar la configuración de Windows Server 2025.
-- [ ] Añadir las capturas de esta semana a `Imgs/` (formato `p4-NN-descripcion.jpg`).
+### ✅ Resultado
+
+- [x] Configuración de Ubuntu Server terminada ([ver instalación](#instalacion-ubuntu-server)).
+- [x] Configuración de Linux Mint terminada.
+- [x] Incidencias de discos resueltas y Windows Server 2025 configurado.
+
+---
+
+<a id="practica-4"></a>
+
+## Práctica 4 · Windows Server 2025 y DHCP
+
+> **Despliegue de servicios con Windows Server 2025, servicio DHCP y protección con DHCP Snooping** · ✅ **Práctica completada**
+
+### 🎯 Objetivo
+
+Desplegar un servidor corporativo con **Windows Server 2025** que centralice los servicios de la sede, ofrezca
+asignación automática de IP mediante **DHCP** y proteja la red frente a servidores DHCP no autorizados con
+**DHCP Snooping** en el switch Cisco.
+
+### 🖥️ Máquina virtual requerida
+
+| Componente | Configuración |
+|---|---|
+| Sistema operativo | Windows Server 2025 |
+| Firmware | UEFI |
+| Disco 0 | 60 GB (sistema operativo) |
+| Disco 1 / Disco 2 | 50 GB + 50 GB (datos) |
+| Disco 3 | 20 GB (copias de seguridad) |
+| Memoria RAM | 8 GB mínimo |
+| Procesadores | 2 vCPU |
+
+| Volumen | Finalidad |
+|---|---|
+| `C:` | Sistema operativo |
+| `D:` | Recursos compartidos corporativos |
+| `E:` | Datos departamentales |
+| `F:` | Copias de seguridad |
+
+### ✅ Tareas realizadas
+
+| # | Tarea | Estado |
+|---|---|---|
+| 1 | Planificación de la infraestructura (hardware, discos, red, nombre del servidor y dominio) | ✅ Completada |
+| 2 | Instalación de Windows Server 2025 en modo UEFI/GPT | ✅ Completada |
+| 3 | Configuración del almacenamiento (volúmenes `D:`, `E:` y `F:`) | ✅ Completada |
+| 4 | Configuración TCP/IP del servidor y pruebas de conectividad | ✅ Completada |
+| 5 | Instalación y configuración del servicio DHCP (ámbito, opciones, reserva para un equipo físico) | ✅ Completada |
+| 6 | Servidor DHCP no autorizado en Ubuntu Server y protección con DHCP Snooping en el switch | ✅ Completada |
+
+<a id="instalacion-ubuntu-server"></a>
+
+### 🐧 Instalación de Ubuntu Server
+
+Pasos de la instalación de la máquina virtual Ubuntu Server en Proxmox. El mismo procedimiento sirve para el equipo Ubuntu Server que actúa como servidor DHCP no autorizado en la tarea 6.
+
+> ℹ️ Estas capturas son **recreaciones** de la consola de la instalación (no hay foto original). Valores usados:
+> servidor `srv-ubuntu`, usuario `admin`, interfaz `ens18` con IP `10.1.10.3/24`, puerta de enlace `10.1.10.1`, DNS `8.8.8.8` y disco de 32 GB.
+> Si alguno no coincide con vuestra instalación, se cambia en [`generar_ubuntu.js`](../Imgs/capturas/generar_ubuntu.js) y se vuelven a generar.
+
+#### Paso 1 · Idioma del instalador
+
+Arrancamos la máquina virtual desde la ISO de Ubuntu Server y, desde la consola de Proxmox, elegimos **Español** como idioma de la instalación.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-01-idioma.png" alt="Idioma del instalador" width="700">
+</p>
+
+#### Paso 2 · Teclado
+
+Seleccionamos la distribución y la variante **Spanish**.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-02-teclado.png" alt="Teclado" width="700">
+</p>
+
+#### Paso 3 · Tipo de instalación
+
+Elegimos **Ubuntu Server** (instalación estándar, no la mínima).
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-03-tipo-instalacion.png" alt="Tipo de instalación" width="700">
+</p>
+
+#### Paso 4 · Configuración IPv4
+
+Editamos la interfaz `ens18` y le asignamos una **IP estática** en la VLAN 110 (Servidors), con el switch como puerta de enlace.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-04-red-ipv4.png" alt="Configuración IPv4" width="700">
+</p>
+
+#### Paso 5 · Conexiones de red
+
+Comprobamos que la interfaz queda configurada en modo `static`.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-05-red.png" alt="Conexiones de red" width="700">
+</p>
+
+#### Paso 6 · Almacenamiento guiado
+
+Usamos el disco entero `/dev/sda` y lo configuramos como **grupo LVM**.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-06-almacenamiento.png" alt="Almacenamiento guiado" width="700">
+</p>
+
+#### Paso 7 · Resumen del almacenamiento
+
+Revisamos las particiones: `/boot/efi` (la VM arranca en UEFI), `/boot` y `/` sobre un volumen lógico LVM.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-07-resumen-discos.png" alt="Resumen del almacenamiento" width="700">
+</p>
+
+#### Paso 8 · Perfil
+
+Indicamos el nombre del servidor y el usuario administrador.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-08-perfil.png" alt="Perfil" width="700">
+</p>
+
+#### Paso 9 · SSH
+
+Instalamos el **servidor OpenSSH** para poder administrar el servidor de forma remota.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-09-ssh.png" alt="SSH" width="700">
+</p>
+
+#### Paso 10 · Instalación completa
+
+Esperamos a que terminen todas las fases y reiniciamos.
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-10-instalacion-completa.png" alt="Instalación completa" width="700">
+</p>
+
+#### Paso 11 · Primer inicio y comprobación
+
+Iniciamos sesión y comprobamos el nombre del equipo, la IP (`ip -br address`) y los discos (`lsblk`).
+
+<p align="center">
+  <img src="../Imgs/capturas/p4-ubuntu-11-primer-inicio.png" alt="Primer inicio y comprobación" width="700">
+</p>
+
+### ✅ Resultado
+
+- Servidor Windows Server 2025 instalado, con sus volúmenes y su configuración de red.
+- Servicio DHCP funcionando: los clientes reciben su configuración IP automáticamente.
+- DHCP Snooping activo en el switch: se bloquean las respuestas del servidor DHCP no autorizado (Ubuntu Server) y solo se aceptan las del servidor Windows.
+
+---
+
+<a id="estado-actual"></a>
+
+## Estado actual del proyecto
+
+> **Actualizado el 20 de noviembre de 2026** · 🟢 **Estado correcto**
+
+Todas las prácticas hasta la fecha están terminadas y los problemas de semanas anteriores están resueltos.
+
+| Componente | Estado |
+|---|---|
+| Servidor Proxmox (`sede`) | ✅ Funcionando |
+| Switch Catalyst 3560 y VLAN 110, 120, 130 y 199 | ✅ Funcionando |
+| MV Ubuntu Server | ✅ Instalada y configurada |
+| MV Linux Mint (cliente) | ✅ Instalada y configurada |
+| MV Windows Server 2025 · DHCP | ✅ Instalada y configurada |
+| DHCP Snooping | ✅ Activo |
+
+### 🎯 Siguiente objetivo: mejorar las VLAN
+
+Ahora el grupo se centra en **mejorar la configuración de las VLAN** de la sede. Líneas de trabajo previstas:
+
+- [ ] Revisar la asignación de puertos de acceso de cada VLAN y documentarla en una tabla.
+- [ ] Llevar las VLAN hasta Proxmox (enlace troncal 802.1Q y bridge con VLAN) para que cada máquina virtual esté en su VLAN.
+- [ ] Hacer que el DHCP de Windows Server llegue a todas las VLAN (`ip helper-address` en cada interfaz VLAN).
+- [ ] Ajustar DHCP Snooping a las VLAN de la sede.
+- [ ] Guardar y documentar la configuración final del switch (`show running-config`).
